@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEAN STACK Form Submission | Form</title>
+</head>
+<body>
+    <h1>Fill the (customer/ecommerce/contact/others/etc.) form:</h1>
+    <p>* marked fields are required.</p>
+
+    <form id="addNewSubmission">
+        <div class="form-row">
+            <label for="firstname">First Name:*</label><br />
+            <input type="text" name="firstname" id="firstname" placeholder="First Name"  required/>
+        </div>
+        <div class="form-row">
+            <label for="lastname">Last Name:*</label><br />
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name"  required/>
+        </div>
+        <div class="form-row">
+            <label for="email">Email:*</label><br />
+            <input type="email" name="email" id="email" placeholder="Email"  required/>
+        </div>
+        <div class="form-row">
+            <label for="address">Address:*</label><br />
+            <input type="text" name="address" id="address" placeholder="Email"  required/>
+        </div>
+        <div class="form-row">
+            <label for="country">Country:*</label><br />
+            <select name="country" id="country" required>
+                <option value="">-- Please select a country --</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="France">France</option>
+                <option value="Russia">Russia</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="zip">Zip Code/Pin Code:*</label><br />
+            <input type="text" name="zip" id="zip" placeholder="Zip Code/Pin Code" required />
+        </div>
+        <div class="form-row">
+            <label for="phone">Phone/Mobile:*</label><br />
+            <input type="number" name="phone" id="phone" placeholder="Phone/Mobile Number" required />
+        </div>
+        <div class="form-row">
+            <label for="comments">Comments:</label><br />
+            <textarea name="comments" id="comments" placeholder="Your Comments" rows="8" ></textarea>
+        </div>
+        <div class="form-row">
+            <p>Subscribe to newsletter/offers:</p>
+            
+            <input type="radio" id="yes" name="subscribed" value="yes" checked>
+            <label for="yes">Yes</label>
+
+            <input type="radio" id="no" name="subscribed" value="no" >
+            <label for="no">No</label>
+        </div>
+        <div class="form-row">
+            <input type="submit" name="submit" id="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
