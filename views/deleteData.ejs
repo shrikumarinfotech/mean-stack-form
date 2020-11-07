@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="formSubmissionApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEAN STACK Form Submission | Delete Data</title>
 </head>
-<body>
+<body ng-controller="MainController as vm">
     <h1>Delete submission data by id:</h1>
+    <p>* marked fields are required</p>
+
+    <form id="deleteSubmission" ng-submit="deleteSubmission()">
+        <div class="form-row">
+            <label for="id">Insert ID:</label>
+            <input ng-model="formdata.id" type="text" name="id" id="id" placeholder="ID" required>
+        </div>
+        <div class="form-row">
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+
+    <div>
+        <p>Submitted data: {{ formdata }}</p>
+        <p>http response status: {{ status }}</p>
+        <p>http response data: {{ data }}</p>
+    </div>
+
+    <script src="/lib/angular.js"></script>
+    <script src="/assets/javascripts/app.js"></script>
 </body>
 </html>

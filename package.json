@@ -1,13 +1,13 @@
 {
   "name": "mean-stack-form",
   "version": "1.0.0",
-  "description": "",
+  "description": "NodeJs form submission saves data as JSON in MongoDB",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Shrikumar Infotech",
+  "license": "GPLv2.0 or later",
   "dependencies": {
     "angular": "^1.8.2",
     "body-parser": "^1.19.0",

@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="formSubmissionApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEAN STACK Form Submission | Update Data</title>
 </head>
-<body>
+<body ng-controller="MainController as vm">
     <h1>Update submission data by id:</h1>
+    <h1>Fill the (customer/ecommerce/contact/others/etc.) form:</h1>
+    <p>* marked fields are required.</p>
+
+    <form id="updateSubmission" ng-submit="updateSubmission()">
+        <div class="form-row">
+            <label for="id">ID:*</label>
+            <input ng-model="formdata.id" type="text" name="id" id="id" placeholder="ID" required>
+        </div>
+        <div class="form-row">
+            <label for="firstname">First Name:*</label><br />
+            <input ng-model="formdata.firstname" type="text" name="firstname" id="firstname" placeholder="First Name"  required/>
+        </div>
+        <div class="form-row">
+            <label for="lastname">Last Name:*</label><br />
+            <input ng-model="formdata.lastname" type="text" name="lastname" id="lastname" placeholder="Last Name"  required/>
+        </div>
+        <div class="form-row">
+            <label for="email">Email:*</label><br />
+            <input ng-model="formdata.email" type="email" name="email" id="email" placeholder="Email"  required/>
+        </div>
+        <div class="form-row">
+            <label for="address">Address:*</label><br />
+            <input ng-model="formdata.address" type="text" name="address" id="address" placeholder="Address"  required/>
+        </div>
+        <div class="form-row">
+            <label for="country">Country:*</label><br />
+            <select ng-model="formdata.country" name="country" id="country" required>
+                <option value="">-- Please select a country --</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="France">France</option>
+                <option value="Russia">Russia</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <label for="zip">Zip Code/Pin Code:*</label><br />
+            <input ng-model="formdata.zip" type="text" name="zip" id="zip" placeholder="Zip Code/Pin Code" required />
+        </div>
+        <div class="form-row">
+            <label for="phone">Phone/Mobile:*</label><br />
+            <input ng-model="formdata.phone" type="number" name="phone" id="phone" placeholder="Phone/Mobile Number" required />
+        </div>
+        <div class="form-row">
+            <label for="comments">Comments:</label><br />
+            <textarea ng-model="formdata.comments" name="comments" id="comments" placeholder="Your Comments" rows="8" ></textarea>
+        </div>
+        <div class="form-row">
+            <p>Subscribe to newsletter/offers:</p>
+            
+            <input ng-model="formdata.subscribed" type="radio" id="yes" name="subscribed" value="yes" checked>
+            <label for="yes">Yes</label>
+
+            <input ng-model="formdata.subscribed" type="radio" id="no" name="subscribed" value="no" >
+            <label for="no">No</label>
+        </div>
+        <div class="form-row">
+            <input type="submit" name="submit" id="submit" value="Submit">
+        </div>
+    </form>
+
+    <div>
+        <p>Submitted data: {{ formdata }}</p>
+        <p>http response code: {{ status }}</p>
+        <p>http response data: {{ data }}</p>
+    </div>
+
+
+    <script src="/lib/angular.js"></script>
+    <script src="/assets/javascripts/app.js"></script>
 </body>
 </html>
